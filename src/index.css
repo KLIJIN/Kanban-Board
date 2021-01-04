@@ -10,16 +10,30 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
+  font-size: 14px;
+}
+
+*{
+  outline: none; 
+  font-family: Roboto, -apple-system, BlinkMacSystemFont,  sans-serif;
 }
 
 html, body, #root {
   height: 100%;
 }
 
-
+button,
+textarea {
+  font-size: 14px;
+}
 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  display: flex;
+  align-items: flex-start;
 }

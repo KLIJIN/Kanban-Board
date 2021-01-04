@@ -1,0 +1,50 @@
+.add-form {
+        // background: #ffffff;
+        box-shadow: 1px 4px 4px rgba(9, 45, 66, 0.3);
+        border-radius: 5px;
+}
+
+.add-form__input {
+    border: 0;
+    padding: 0 12px 12px 12px;
+}
+
+.add-form__input textarea {
+    box-sizing: border-box; //запрет текстареа выходить за рамки контейнера
+    border: 0;
+    border-radius: 3%;
+    padding: 6px  10px;
+    margin-bottom: 5px;
+    margin-top: 12px;
+    resize: 0;
+     width:100%;
+    cursor: text;
+    line-height: 15px;
+}
+
+.add-form__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.panel__buttom-add-btn {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 5px 5px;
+    color: #313b41;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.panel__buttom-add-btn:hover {
+    background-color: darken(#dfe3e6b4, 12);
+    color: darken(#313b41, 40);
+}
+
+.panel img {
+    margin-right: 8px;
+    cursor: pointer;
+}

@@ -1,18 +1,12 @@
 import React, { useState, useRef, useEffect} from 'react'
-// import{Fragment} from 'react' //вместо пустых ковычем можно оборачивать компоненту в Фрагмент
-import "./AddForm.scss"
-// import Card from "../card/Card"
 import Button from "../Button/Button"
 import addSvg from "../../assets/add.svg"
 import clearSvg from "../../assets/clear.svg"
 
-
 const AddForm = ({columnIndex, isEmptyPanel, addColumn, onAddCards}) => {//нижняя панель списка задач
     const [showForm, setShowForm] = useState(false); //переключаем кнопки
     const [text, setText]  = useState("");
-    const textareaRef = useRef();  //наводим фокус на тест/инпут
-   
-    //console.log("AddForm", onAddPanel, onAddCards  )
+    const textareaRef = useRef(); //наводим фокус на тест/инпут
 
     useEffect( () => {
        textareaRef.current && textareaRef.current.focus()

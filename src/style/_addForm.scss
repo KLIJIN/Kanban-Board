@@ -1,0 +1,39 @@
+.add-form {
+    // background: #ffffff;
+    box-shadow: 1px 4px 4px rgba(9, 45, 66, 0.3);
+    border-radius: 5px;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    &__input {
+        border: 0;
+        padding: 0 12px 12px 12px;
+
+        textarea {
+            box-sizing: border-box; //запрет текстареа выходить за рамки контейнера
+            border: 0;
+            border-radius: 3%;
+            padding: 6px  10px;
+            margin-bottom: 5px;
+            margin-top: 12px;
+            resize: 0;
+             width:100%;
+            cursor: text;
+            line-height: 15px;
+            &:hover{
+                transform: scale(1.01) ;
+            }
+        }
+    }
+
+}
+
+
+
+
+

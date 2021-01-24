@@ -3,9 +3,9 @@ import {connect} from "react-redux";  //The connect() function connects a React 
 import Panel from "../components/Panel/Panel.js"
 import {DragDropContext} from "react-beautiful-dnd"
 import {addColumn, addCard, removeColumn, reorderCardsDel} from "../reducers/actions.js"
-//import { createDndContext } from "react-dnd";
 
 const Panels = ({Columns, addColumn, addCard, removeColumn, reorderCardsDel}) => {
+
   const handleDragEnd = ({source, destination}) => {
       console.log("from откудава", source)
       console.log("to направленье", destination)
@@ -19,14 +19,14 @@ const Panels = ({Columns, addColumn, addCard, removeColumn, reorderCardsDel}) =>
   }
 
     return (
-      <DragDropContext onDragEnd={ handleDragEnd  } >
-          <section style={{display: "flex"}}>
-                  {Columns.map( ( item, index )   => {
+      <DragDropContext onDragEnd={ handleDragEnd } >
+          <section className="panels__container">
+                  {Columns.map( (item, index) => {
                       return (
-                              <Panel key={index}{...item} columnIndex={index} addColumn={addColumn} AddCards={addCard}  removeColumn={removeColumn}    /> 
-                              )
+                              <Panel key={index} {...item} columnIndex={index} addColumn={addColumn} AddCards={addCard}  removeColumn={removeColumn} /> 
+                      )
                   })}
-              <Panel addColumn={addColumn} AddCards={addCard}  removeColumn={removeColumn}      /> 
+              <Panel addColumn={addColumn} AddCards={addCard}  removeColumn={removeColumn} /> 
           </section>
         </DragDropContext>
     )

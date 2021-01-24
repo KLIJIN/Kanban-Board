@@ -7,6 +7,9 @@
     margin-top: 12px;
     line-height: 19px;
     white-space: normal;
+    &:hover{
+        transform: scale(1.01) ;
+    }
 }
 
 .dragging{

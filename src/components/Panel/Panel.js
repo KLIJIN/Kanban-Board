@@ -1,46 +1,46 @@
 import React from 'react'
 import Card from "../card/Card"
-import {Droppable} from "react-beautiful-dnd"
+import { Droppable } from "react-beautiful-dnd"
 import AddForm from "../AddForm/AddForm"
-import clearSvg from "../../assets/clear.svg";
+import clearSvg from "../../assets/images/clear.svg";
 
 //компонентная панель отрисовывает ЗАГОЛОВКИ И КАРТОЧКИ
-const Panel = (  {columnIndex, title, cards, addColumn, AddCards, removeColumn} ) => {
+const Panel = ({ columnIndex, title, cards, addColumn, AddCards, removeColumn }) => {
 
     return (
-        <div className= {`panel${!cards ? " panel__empty":"" }`}>
-            <div className="panel__title" >  
+        <div className={`panel${!cards ? " panel__empty" : ""}`}>
+            <div className="panel__title" >
                 <b> {title} </b>
-                { cards && <div className="column__remove" onClick={ () => removeColumn(columnIndex) } > 
-                        <img src={clearSvg} alt="Clear svg icon" />
-                </div> }
+                {cards && <div className="column__remove" onClick={() => removeColumn(columnIndex)} >
+                    <img src={clearSvg} alt="Clear svg icon" />
+                </div>}
             </div>
-        
+
             <Droppable droppableId={`${columnIndex}`} key={columnIndex}  >
-                { (provided) => {
-                    return(
+                {(provided) => {
+                    return (
                         <div className="panel__items" {...provided.droppableProps}
-                        ref={provided.innerRef}  >
+                            ref={provided.innerRef}  >
                             {cards &&
-                                cards.map( (card, index) => {
+                                cards.map((card, index) => {
                                     //console.log("Panel_pandel__items",card)
                                     return (
-                                            <Card key={index} cardIndex={index} columnIndex={columnIndex} >
-                                                {card} 
-                                            </Card>
-                                            ) 
-                                    })
+                                        <Card key={index} cardIndex={index} columnIndex={columnIndex} >
+                                            {card}
+                                        </Card>
+                                    )
+                                })
                             }
                             {provided.placeholder}
                         </div>
                     )
                 }
                 }
-            </Droppable> 
+            </Droppable>
 
             <AddForm isEmptyPanel={cards} addColumn={addColumn} onAddCards={AddCards} columnIndex={columnIndex} />
         </div>
-    ) 
+    )
 }
 
-  export default Panel;
+export default Panel;
